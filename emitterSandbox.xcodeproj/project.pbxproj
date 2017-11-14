@@ -14,7 +14,8 @@
 		8B691F1E1FB9E534001409E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F1C1FB9E534001409E5 /* Main.storyboard */; };
 		8B691F201FB9E534001409E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F1F1FB9E534001409E5 /* Assets.xcassets */; };
 		8B691F231FB9E534001409E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */; };
-		8B691F2B1FBA0EEC001409E5 /* myParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F2A1FBA0EEC001409E5 /* myParticle.sks */; };
+		8BAB86061FBB297D00E4EFA0 /* particleSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */; };
+		8BAB86081FBB298700E4EFA0 /* particleFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86071FBB298700E4EFA0 /* particleFire.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		8B691F1F1FB9E534001409E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B691F221FB9E534001409E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B691F241FB9E534001409E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B691F2A1FBA0EEC001409E5 /* myParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = myParticle.sks; sourceTree = "<group>"; };
+		8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleSpark.sks; sourceTree = "<group>"; };
+		8BAB86071FBB298700E4EFA0 /* particleFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleFire.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +70,18 @@
 				8B691F1F1FB9E534001409E5 /* Assets.xcassets */,
 				8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */,
 				8B691F241FB9E534001409E5 /* Info.plist */,
-				8B691F2A1FBA0EEC001409E5 /* myParticle.sks */,
+				8BAB86091FBB299100E4EFA0 /* Particles */,
 			);
 			path = emitterSandbox;
+			sourceTree = "<group>";
+		};
+		8BAB86091FBB299100E4EFA0 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */,
+				8BAB86071FBB298700E4EFA0 /* particleFire.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,10 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B691F1E1FB9E534001409E5 /* Main.storyboard in Resources */,
+				8BAB86081FBB298700E4EFA0 /* particleFire.sks in Resources */,
+				8BAB86061FBB297D00E4EFA0 /* particleSpark.sks in Resources */,
 				8B691F151FB9E534001409E5 /* GameScene.sks in Resources */,
 				8B691F201FB9E534001409E5 /* Assets.xcassets in Resources */,
 				8B691F231FB9E534001409E5 /* LaunchScreen.storyboard in Resources */,
-				8B691F2B1FBA0EEC001409E5 /* myParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
-
+class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var scene : GameScene!
+    var dataPicker = UIPickerView()
+    
+    let list = ["Spark", "Fire"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +26,8 @@ class GameViewController: UIViewController {
             
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
+                
+                self.scene = sceneNode
                 
                 // Copy gameplay related content over to the scene
                 sceneNode.entities = scene.entities
@@ -62,4 +69,50 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+
+    @IBAction func actListEmitter(_ sender: Any) {
+        //Création de notre alert
+        let alertSelection = UIAlertController(title: "Selectionner un style\n\n\n\n\n\n\n", message: "", preferredStyle: .actionSheet)
+
+        //On ajoute un bouton ok
+        alertSelection.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (btn) in
+            
+            switch self.list[self.dataPicker.selectedRow(inComponent: 0)]{
+            case "Spark":
+                self.scene.currentType = GameScene.listEmitter.Spark
+                break
+            case "Fire":
+                self.scene.currentType = GameScene.listEmitter.Fire
+                break
+            default:
+                self.scene.currentType = GameScene.listEmitter.Spark
+            }
+        }))
+        
+        //On ajoute notre data picker
+        dataPicker = UIPickerView(frame: CGRect(x: 0, y: 40, width:350, height: 140))
+        
+        dataPicker.delegate = self
+        dataPicker.dataSource = self
+        
+        alertSelection.view.addSubview(dataPicker)
+        
+        //On affiche notre alert
+        self.present(alertSelection, animated: true, completion: nil)
+        dataPicker.reloadAllComponents()
+        
+    }
+    
 }

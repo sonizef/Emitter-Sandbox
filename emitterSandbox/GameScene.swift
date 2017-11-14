@@ -15,6 +15,12 @@ class GameScene: SKScene {
     var graphs = [String : GKGraph]()
 
     var currentEmitter : SKEmitterNode!
+    var currentType : listEmitter = listEmitter.Spark
+    
+    enum listEmitter {
+        case Spark
+        case Fire
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -23,7 +29,7 @@ class GameScene: SKScene {
         }
         
         for t in touches{
-            self.addChild(createEmitter())
+            self.addChild(createEmitter(currentType))
             currentEmitter.position = t.location(in: self)
         }
     }
@@ -38,12 +44,23 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(self.children.contains(currentEmitter)){
-            currentEmitter.numParticlesToEmit = 100
+            currentEmitter.numParticlesToEmit = 1
         }
     }
     
-    func createEmitter() -> SKEmitterNode {
-        currentEmitter = SKEmitterNode(fileNamed: "myParticle.sks")!
+    func createEmitter(_ nameEmitter : listEmitter) -> SKEmitterNode {
+        let fileName : String!
+
+        switch nameEmitter {
+            case .Spark:
+                fileName = "particleSpark.sks"
+                break
+            case .Fire:
+                fileName = "particleFire.sks"
+                break
+        }
+        
+        currentEmitter = SKEmitterNode(fileNamed: fileName)!
         currentEmitter.targetNode = self
         return currentEmitter
     }
