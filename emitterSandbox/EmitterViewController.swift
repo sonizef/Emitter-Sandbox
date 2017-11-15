@@ -12,7 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var scene : GameScene!
+    var scene : EmitterScene!
     var dataPicker = UIPickerView()
     @IBOutlet weak var menu: UIView!
     
@@ -29,10 +29,10 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
+        if let scene = GKScene(fileNamed: "EmitterScene") {
             
             // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
+            if let sceneNode = scene.rootNode as! EmitterScene? {
                 
                 self.scene = sceneNode
                 
@@ -104,13 +104,13 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             switch self.list[self.dataPicker.selectedRow(inComponent: 0)]{
             case "Spark":
-                self.scene.currentType = GameScene.listEmitter.Spark
+                self.scene.currentType = EmitterScene.listEmitter.Spark
                 break
             case "Fire":
-                self.scene.currentType = GameScene.listEmitter.Fire
+                self.scene.currentType = EmitterScene.listEmitter.Fire
                 break
             default:
-                self.scene.currentType = GameScene.listEmitter.Spark
+                self.scene.currentType = EmitterScene.listEmitter.Spark
             }
         }))
         
