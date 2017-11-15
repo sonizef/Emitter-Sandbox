@@ -16,6 +16,7 @@
 		8B691F231FB9E534001409E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */; };
 		8BAB86061FBB297D00E4EFA0 /* particleSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */; };
 		8BAB86081FBB298700E4EFA0 /* particleFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86071FBB298700E4EFA0 /* particleFire.sks */; };
+		8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8B691F241FB9E534001409E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleSpark.sks; sourceTree = "<group>"; };
 		8BAB86071FBB298700E4EFA0 /* particleFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleFire.sks; sourceTree = "<group>"; };
+		8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				8B691F121FB9E534001409E5 /* AppDelegate.swift */,
 				8B691F141FB9E534001409E5 /* GameScene.sks */,
 				8B691F181FB9E534001409E5 /* GameScene.swift */,
+				8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */,
 				8B691F1A1FB9E534001409E5 /* GameViewController.swift */,
 				8B691F1C1FB9E534001409E5 /* Main.storyboard */,
 				8B691F1F1FB9E534001409E5 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 				8B691F191FB9E534001409E5 /* GameScene.swift in Sources */,
 				8B691F1B1FB9E534001409E5 /* GameViewController.swift in Sources */,
 				8B691F131FB9E534001409E5 /* AppDelegate.swift in Sources */,
+				8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

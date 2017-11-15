@@ -14,11 +14,18 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     var scene : GameScene!
     var dataPicker = UIPickerView()
+    @IBOutlet weak var menu: UIView!
+    
+    var menuIsOpen : Bool = false
     
     let list = ["Spark", "Fire"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //On place notre menu
+        menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.7, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
+        
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
@@ -83,6 +90,12 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
 
     @IBAction func actListEmitter(_ sender: Any) {
+        //On ferme le menu si il est ouvert
+        if(menuIsOpen){
+            closeMenu()
+        }
+        
+        
         //Création de notre alert
         let alertSelection = UIAlertController(title: "Selectionner un style\n\n\n\n\n\n\n", message: "", preferredStyle: .actionSheet)
 
@@ -113,6 +126,34 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.present(alertSelection, animated: true, completion: nil)
         dataPicker.reloadAllComponents()
         
+    }
+    
+    //On ouvre ou ferme le menu en fonction si celui-ci l'est deja ou non
+    @IBAction func actMenu(_ sender: Any) {
+        if(menuIsOpen){
+            closeMenu()
+        }
+        else{
+            openMenu()
+        }
+    }
+    
+    func openMenu(){
+        let animOpen = CGAffineTransform(translationX: -menu.frame.width, y: 0)
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.menu.transform = animOpen
+        }) { (bool) in
+            self.menuIsOpen = true
+        }
+    }
+    
+    func closeMenu(){
+        let animClose = CGAffineTransform(translationX: menu.frame.width, y: 0)
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
+            self.menu.transform = animClose
+        }) { (bool) in
+            self.menuIsOpen = false
+        }
     }
     
 }
