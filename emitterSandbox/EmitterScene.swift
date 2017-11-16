@@ -28,17 +28,16 @@ class EmitterScene: SKScene {
             currentEmitter.removeFromParent()
         }
         
-        for t in touches{
-            self.addChild(createEmitter(currentType))
-            currentEmitter.position = t.location(in: self)
-        }
+        let t = touches.first!
+        self.addChild(createEmitter(currentType))
+        currentEmitter.position = t.location(in: self)
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches{
-            if(self.children.contains(currentEmitter)){
-                currentEmitter.position = t.location(in: self)
-            }
+        let t = touches.first!
+        if(self.children.contains(currentEmitter)){
+            currentEmitter.position = t.location(in: self)
         }
     }
     
