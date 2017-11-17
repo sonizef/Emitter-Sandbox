@@ -25,9 +25,8 @@ class EmitterScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if(!EmitterViewController.menuIsOpen){
-            if(currentEmitter != nil){
-                currentEmitter.removeFromParent()
-            }
+            
+            removeEmitterFromParent()
             
             let t = touches.first!
             self.addChild(createEmitter())
@@ -49,7 +48,7 @@ class EmitterScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if(!EmitterViewController.menuIsOpen){
-            removeEmitter()
+            disabledEmitter()
         }
     }
     
@@ -61,9 +60,15 @@ class EmitterScene: SKScene {
     }
     
     //Si la scene contient un emitter, alors on la supprime
-    func removeEmitter(){
+    func disabledEmitter(){
         if(self.children.contains(currentEmitter)){
             currentEmitter.numParticlesToEmit = 1
+        }
+    }
+    
+    func removeEmitterFromParent(){
+        if(currentEmitter != nil){
+            currentEmitter.removeFromParent()
         }
     }
 }

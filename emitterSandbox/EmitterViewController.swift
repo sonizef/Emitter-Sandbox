@@ -139,6 +139,8 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func openMenu(){
+        scene.removeEmitterFromParent()
+        
         let animOpen = CGAffineTransform(translationX: -menu.frame.width, y: 0)
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.menu.transform = animOpen
@@ -152,7 +154,7 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let animClose = CGAffineTransform(translationX: menu.frame.width, y: 0)
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
             self.menu.transform = animClose
-            self.scene.removeEmitter()
+            self.scene.disabledEmitter()
         }) { (bool) in
             EmitterViewController.menuIsOpen = false
         }
