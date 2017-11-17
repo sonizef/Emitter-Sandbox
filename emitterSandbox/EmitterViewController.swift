@@ -24,7 +24,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         
         //On place notre menu
-        menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.7, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
+        menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.5, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
         
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
@@ -142,6 +142,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let animOpen = CGAffineTransform(translationX: -menu.frame.width, y: 0)
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.menu.transform = animOpen
+            self.scene.addChild(self.scene.createEmitter())
         }) { (bool) in
             self.menuIsOpen = true
         }
@@ -151,6 +152,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let animClose = CGAffineTransform(translationX: menu.frame.width, y: 0)
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
             self.menu.transform = animClose
+            self.scene.removeEmitter()
         }) { (bool) in
             self.menuIsOpen = false
         }
