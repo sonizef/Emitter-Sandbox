@@ -13,15 +13,15 @@ import SpriteKit
 class customEmitter : SKEmitterNode{
     
     // Variable qui contient un dictionnaire avec tous les parametres
-    // modifiable de notre customEmitter
-    static var config : [String : Any]!
+    // modifiable de notre customEmitter (par defaut parametre de "Spark")
+    static var config : [String : Any] = catalogueEmitter.getEmitterFromCatalogue(.Spark)
     
     // Lorsqu'on créer un customEmitter
     override init() {
         super.init()
         
-        // Par defaut on utilise l'emitter pré-defini "Spark"
-        setDictionaryFromCatalogue(.Spark)
+        // À chaque création d'emitter on recupere nos variables contenu dans
+        // notre dictionnaire "config"
         configureFromDictionary()
     }
 

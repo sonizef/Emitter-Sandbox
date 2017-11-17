@@ -22,7 +22,7 @@
                                 <rect key="frame" x="186" y="64" width="189" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="2Ac-Lg-NxW" kind="embed" id="bDX-Jw-nt2"/>
+                                    <segue destination="2Ac-Lg-NxW" kind="embed" identifier="segueMenu" id="bDX-Jw-nt2"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -79,24 +79,60 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOr-LR-7yl">
-                                <rect key="frame" x="0.0" y="0.0" width="189" height="603"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0B-Yo-pbz">
+                                <rect key="frame" x="0.0" y="20" width="189" height="583"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configuration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz9-Pw-Fkv">
+                                        <rect key="frame" x="39.5" y="16" width="109.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="pGi-as-psX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2x-ub-pUr">
+                                        <rect key="frame" x="8" y="45" width="46.5" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2500" minValue="0.0" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="PPL-Ob-9KV">
+                                        <rect key="frame" x="6" y="58" width="176" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Tk8-Ff-VAL"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PPL-Ob-9KV" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="35H-Tb-3dP"/>
+                                    <constraint firstAttribute="trailing" secondItem="PPL-Ob-9KV" secondAttribute="trailing" constant="8" id="Fku-cu-5Oq"/>
+                                    <constraint firstItem="Q2x-ub-pUr" firstAttribute="top" secondItem="yz9-Pw-Fkv" secondAttribute="bottom" constant="8" id="JAZ-gL-KCp"/>
+                                    <constraint firstItem="yz9-Pw-Fkv" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="K6f-kr-MXu"/>
+                                    <constraint firstItem="yz9-Pw-Fkv" firstAttribute="top" secondItem="e0B-Yo-pbz" secondAttribute="top" constant="16" id="NfR-Jg-XbR"/>
+                                    <constraint firstItem="Q2x-ub-pUr" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="b3n-bd-ih8"/>
+                                    <constraint firstItem="PPL-Ob-9KV" firstAttribute="top" secondItem="Q2x-ub-pUr" secondAttribute="bottom" id="bQj-1R-QPQ"/>
+                                    <constraint firstItem="PPL-Ob-9KV" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="vjI-3h-BpG"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mOr-LR-7yl" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" constant="-20" id="1UK-Fd-DAt"/>
-                            <constraint firstItem="mGi-fJ-SH8" firstAttribute="bottom" secondItem="mOr-LR-7yl" secondAttribute="bottom" id="PYT-7B-wfH"/>
-                            <constraint firstItem="mOr-LR-7yl" firstAttribute="leading" secondItem="OfD-h7-zI7" secondAttribute="leading" id="TlW-Di-R1R"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="leading" secondItem="OfD-h7-zI7" secondAttribute="leading" id="Ckm-g8-b0X"/>
+                            <constraint firstAttribute="trailing" secondItem="e0B-Yo-pbz" secondAttribute="trailing" id="F1X-sR-BmT"/>
                             <constraint firstItem="9oW-Ac-QMO" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="VMi-Sg-bHz"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="a03-Dq-yvJ"/>
+                            <constraint firstItem="mGi-fJ-SH8" firstAttribute="bottom" secondItem="e0B-Yo-pbz" secondAttribute="bottom" id="hDr-BX-gIs"/>
                             <constraint firstItem="9oW-Ac-QMO" firstAttribute="trailing" secondItem="mGi-fJ-SH8" secondAttribute="trailing" id="hlr-Pd-UEV"/>
-                            <constraint firstAttribute="trailing" secondItem="mOr-LR-7yl" secondAttribute="trailing" id="jsg-Dw-v96"/>
                             <constraint firstItem="9oW-Ac-QMO" firstAttribute="leading" secondItem="mGi-fJ-SH8" secondAttribute="leading" id="mAQ-gH-Csf"/>
                             <constraint firstItem="mGi-fJ-SH8" firstAttribute="bottom" secondItem="9oW-Ac-QMO" secondAttribute="bottom" id="pXD-1h-OLU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mGi-fJ-SH8"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="sldEmitterBirthrate" destination="PPL-Ob-9KV" id="g6F-ue-rv0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auL-B0-LON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,7 @@ import GameplayKit
 class EmitterScene: SKScene {
     
     // Déclarations de nos variables
-    var currentEmitter : SKEmitterNode!
+    var currentEmitter : customEmitter!
     
     // Lorsqu'on touche l'écran
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

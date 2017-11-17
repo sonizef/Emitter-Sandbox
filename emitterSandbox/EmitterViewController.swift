@@ -80,6 +80,15 @@ class EmitterViewController: UIViewController{
         return true
     }
     
+    // Liaison qui permet de passer notre currentEmitter vers notre menu
+    // Afin de pouvoir modifier celui-ci, chaque element à la fois
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueMenu"){
+            let vc = segue.destination as! MenuViewController
+            vc.parentController = self
+        }
+    }
+    
     // On ouvre ou ferme le menu en fonction si celui-ci l'est deja ou non
     @IBAction func actMenu(_ sender: Any) {
         if(EmitterViewController.menuIsOpen){
