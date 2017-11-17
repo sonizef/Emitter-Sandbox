@@ -18,6 +18,7 @@ class customEmitter : SKEmitterNode{
     
     override init() {
         super.init()
+        setDictionaryFromCatalogue(.Spark)
         configureFromDictionary()
     }
 
@@ -27,6 +28,7 @@ class customEmitter : SKEmitterNode{
     
     private func configureFromDictionary(){
         //On configure notre particule en fonction des données entrées dans le dictionnaire
+        self.particleTexture = (customEmitter.config["TEXTURE"] as! SKTexture)
         self.particleColor = customEmitter.config["COLOR_DEB"] as! UIColor
         self.particleBirthRate = customEmitter.config["EMITTER_BIRTHRATE"] as! CGFloat
         self.numParticlesToEmit = customEmitter.config["EMITTER_MAXIMUM"] as! Int
