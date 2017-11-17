@@ -42,15 +42,20 @@ class EmitterScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if(self.children.contains(currentEmitter)){
-            currentEmitter.numParticlesToEmit = 1
-        }
+        removeEmitter()
     }
     
+    //Créer un custom emitter et le retourne
     func createEmitter() -> SKEmitterNode {
-        
         currentEmitter = customEmitter()
         currentEmitter.targetNode = self
         return currentEmitter
+    }
+    
+    //Si la scene contient un emitter, alors on la supprime
+    func removeEmitter(){
+        if(self.children.contains(currentEmitter)){
+            currentEmitter.numParticlesToEmit = 1
+        }
     }
 }
