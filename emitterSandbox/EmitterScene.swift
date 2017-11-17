@@ -29,7 +29,7 @@ class EmitterScene: SKScene {
         }
         
         let t = touches.first!
-        self.addChild(createEmitter(currentType))
+        self.addChild(createEmitter())
         currentEmitter.position = t.location(in: self)
         
     }
@@ -47,19 +47,9 @@ class EmitterScene: SKScene {
         }
     }
     
-    func createEmitter(_ nameEmitter : listEmitter) -> SKEmitterNode {
-        let fileName : String!
-
-        switch nameEmitter {
-            case .Spark:
-                fileName = "particleSpark.sks"
-                break
-            case .Fire:
-                fileName = "particleFire.sks"
-                break
-        }
+    func createEmitter() -> SKEmitterNode {
         
-        currentEmitter = SKEmitterNode(fileNamed: fileName)!
+        currentEmitter = customEmitter()
         currentEmitter.targetNode = self
         return currentEmitter
     }
