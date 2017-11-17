@@ -24,25 +24,33 @@ class EmitterScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if(currentEmitter != nil){
-            currentEmitter.removeFromParent()
+        if(!EmitterViewController.menuIsOpen){
+            if(currentEmitter != nil){
+                currentEmitter.removeFromParent()
+            }
+            
+            let t = touches.first!
+            self.addChild(createEmitter())
+            currentEmitter.position = t.location(in: self)
         }
-        
-        let t = touches.first!
-        self.addChild(createEmitter())
-        currentEmitter.position = t.location(in: self)
-        
+    
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let t = touches.first!
-        if(self.children.contains(currentEmitter)){
-            currentEmitter.position = t.location(in: self)
+        
+        if(!EmitterViewController.menuIsOpen){
+            let t = touches.first!
+            if(self.children.contains(currentEmitter)){
+                currentEmitter.position = t.location(in: self)
+            }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        removeEmitter()
+        
+        if(!EmitterViewController.menuIsOpen){
+            removeEmitter()
+        }
     }
     
     //Créer un custom emitter et le retourne

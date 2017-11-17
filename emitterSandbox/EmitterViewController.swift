@@ -10,13 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var scene : EmitterScene!
     var dataPicker = UIPickerView()
     @IBOutlet weak var menu: UIView!
     
-    var menuIsOpen : Bool = false
+    static var menuIsOpen : Bool = false
     
     let list = ["Spark", "Fire"]
     
@@ -91,7 +91,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     @IBAction func actListEmitter(_ sender: Any) {
         //On ferme le menu si il est ouvert
-        if(menuIsOpen){
+        if(EmitterViewController.menuIsOpen){
             closeMenu()
         }
         
@@ -130,7 +130,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     //On ouvre ou ferme le menu en fonction si celui-ci l'est deja ou non
     @IBAction func actMenu(_ sender: Any) {
-        if(menuIsOpen){
+        if(EmitterViewController.menuIsOpen){
             closeMenu()
         }
         else{
@@ -144,7 +144,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.menu.transform = animOpen
             self.scene.addChild(self.scene.createEmitter())
         }) { (bool) in
-            self.menuIsOpen = true
+            EmitterViewController.menuIsOpen = true
         }
     }
     
@@ -154,7 +154,7 @@ class GameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.menu.transform = animClose
             self.scene.removeEmitter()
         }) { (bool) in
-            self.menuIsOpen = false
+            EmitterViewController.menuIsOpen = false
         }
     }
     
