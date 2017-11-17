@@ -12,9 +12,13 @@ import UIKit
 
 class catalogueEmitter {
     
+    // Nos différents types d'Emitter
     enum type {
         case Spark, Fire
     }
+    
+    // Un dictionnaire contenant différents Emitter pré-enregistré
+    // En fonction des types d'Emitter declaré ci-dessus
     
     static let catalogue : [type : [String : Any] ] = [
         type.Spark : [
@@ -75,6 +79,8 @@ class catalogueEmitter {
         ]
     ]
     
+    // Fonction qui nous retourne un tableau de configuration
+    // en fonction du type donnée en parametre
     static func getEmitterFromCatalogue(_ typeEmitter:type) -> [String : Any]{
         return catalogue[typeEmitter]!
     }

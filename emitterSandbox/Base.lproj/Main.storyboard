@@ -30,12 +30,6 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emitter Simulation" id="dpD-G4-6Ja">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="ijP-nC-VCc">
-                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <connections>
-                                <action selector="actListEmitter:" destination="BV1-FR-VrT" id="gta-0I-eKk"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="41G-Op-S1e">
                             <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>

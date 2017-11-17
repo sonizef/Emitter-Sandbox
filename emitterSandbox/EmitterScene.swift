@@ -11,32 +11,24 @@ import GameplayKit
 
 class EmitterScene: SKScene {
     
-    var entities = [GKEntity]()
-    var graphs = [String : GKGraph]()
-
+    // Déclarations de nos variables
     var currentEmitter : SKEmitterNode!
-    var currentType : listEmitter = listEmitter.Spark
     
-    enum listEmitter {
-        case Spark
-        case Fire
-    }
-    
+    // Lorsqu'on touche l'écran
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        // On s'assure que le menu soit fermé
         if(!EmitterViewController.menuIsOpen){
-            
             removeEmitterFromParent()
             
             let t = touches.first!
             self.addChild(createEmitter())
             currentEmitter.position = t.location(in: self)
         }
-    
     }
     
+    // Lorsque notre doigt bouge dans l'écran
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        // On s'assure que le menu soit fermé
         if(!EmitterViewController.menuIsOpen){
             let t = touches.first!
             if(self.children.contains(currentEmitter)){
@@ -45,27 +37,29 @@ class EmitterScene: SKScene {
         }
     }
     
+    // Lorsqu'on retire notre doigt de l'écran
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        // On s'assure que le menu soit fermé
         if(!EmitterViewController.menuIsOpen){
             disabledEmitter()
         }
     }
     
-    //Créer un custom emitter et le retourne
+    // Créer un customEmitter et le retourne
     func createEmitter() -> SKEmitterNode {
         currentEmitter = customEmitter()
         currentEmitter.targetNode = self
         return currentEmitter
     }
     
-    //Si la scene contient un emitter, alors on la supprime
+    // Desactive l'emitter courant en mettant son nombre de particule à 1
     func disabledEmitter(){
         if(self.children.contains(currentEmitter)){
             currentEmitter.numParticlesToEmit = 1
         }
     }
     
+    // Supprime l'emitter courant de la scene
     func removeEmitterFromParent(){
         if(currentEmitter != nil){
             currentEmitter.removeFromParent()

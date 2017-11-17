@@ -12,12 +12,15 @@ import SpriteKit
 
 class customEmitter : SKEmitterNode{
     
-    //On déclare et initialise toutes nos variables statics dans un dictionnaire
-    //C-a-d tous les paremetres possibles de notre emitters
+    // Variable qui contient un dictionnaire avec tous les parametres
+    // modifiable de notre customEmitter
     static var config : [String : Any]!
     
+    // Lorsqu'on créer un customEmitter
     override init() {
         super.init()
+        
+        // Par defaut on utilise l'emitter pré-defini "Spark"
         setDictionaryFromCatalogue(.Spark)
         configureFromDictionary()
     }
@@ -26,8 +29,8 @@ class customEmitter : SKEmitterNode{
         fatalError("init(coder:) has not been implemented")
     }
     
+    // On configure notre emitter en fonction des données contenu dans le dictionnaire
     private func configureFromDictionary(){
-        //On configure notre particule en fonction des données entrées dans le dictionnaire
         self.particleTexture = (customEmitter.config["TEXTURE"] as! SKTexture)
         self.particleColor = customEmitter.config["COLOR_DEB"] as! UIColor
         self.particleBirthRate = customEmitter.config["EMITTER_BIRTHRATE"] as! CGFloat
@@ -54,9 +57,9 @@ class customEmitter : SKEmitterNode{
         self.particleRotationSpeed = customEmitter.config["ROTATION_SPEED"] as! CGFloat
         self.particleColorBlendFactor = customEmitter.config["COLOR_BLEND_FACTOR"] as! CGFloat
         self.particleBlendMode = customEmitter.config["COLOR_BLEND_MODE"] as! SKBlendMode
-        
     }
     
+    // On change notre dictionnaire en fonction d'un type déjà stocké dans le catalogue
     private func setDictionaryFromCatalogue(_ typeEmitter : catalogueEmitter.type){
         customEmitter.config = catalogueEmitter.getEmitterFromCatalogue(typeEmitter)
     }
