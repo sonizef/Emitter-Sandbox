@@ -17,6 +17,7 @@
 		8BAB86061FBB297D00E4EFA0 /* particleSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */; };
 		8BAB86081FBB298700E4EFA0 /* particleFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB86071FBB298700E4EFA0 /* particleFire.sks */; };
 		8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */; };
+		8BFD3F641FBEDC3700DD2012 /* catalogueEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8BAB86051FBB297D00E4EFA0 /* particleSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleSpark.sks; sourceTree = "<group>"; };
 		8BAB86071FBB298700E4EFA0 /* particleFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particleFire.sks; sourceTree = "<group>"; };
 		8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEmitter.swift; sourceTree = "<group>"; };
+		8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catalogueEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8B691F181FB9E534001409E5 /* EmitterScene.swift */,
 				8B691F1A1FB9E534001409E5 /* EmitterViewController.swift */,
 				8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */,
+				8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */,
 				8B691F1C1FB9E534001409E5 /* Main.storyboard */,
 				8B691F1F1FB9E534001409E5 /* Assets.xcassets */,
 				8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				8B691F191FB9E534001409E5 /* EmitterScene.swift in Sources */,
 				8B691F1B1FB9E534001409E5 /* EmitterViewController.swift in Sources */,
 				8B691F131FB9E534001409E5 /* AppDelegate.swift in Sources */,
+				8BFD3F641FBEDC3700DD2012 /* catalogueEmitter.swift in Sources */,
 				8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
