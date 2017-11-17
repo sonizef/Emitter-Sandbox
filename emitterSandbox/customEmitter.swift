@@ -12,31 +12,33 @@ import SpriteKit
 
 class customEmitter : SKEmitterNode{
     
-    //On déclare et initialise toutes nos variables statics
+    //On déclare et initialise toutes nos variables statics dans un dictionnaire
     //C-a-d tous les paremetres possibles de notre emitters
-    static var COLOR_DEB = UIColor.yellow
-    static var EMITTER_BIRTHRATE = 100
-    static var EMITTER_MAXIMUM = 0
-    static var LIFETIME_START = 1
-    static var LIFETIME_RANGE = 0
-    static var POSITION_RANGE_X = 0
-    static var POSITION_RANGE_Y = 0
-    static var POSITION_RANGE_Z = 0
-    static var ANGLE_START = 0
-    static var ANGLE_RANGE = 0
-    static var SPEED_START = 0
-    static var SPEED_RANGE = 0
-    static var ACCELERATION_X = 0
-    static var ACCELERATION_Y = 0
-    static var ALPHA_START = 0
-    static var ALPHA_RANGE = 0
-    static var ALPHA_SPEED = 0
-    static var SCALE_START = 0
-    static var SCALE_RANGE = 0
-    static var SCALE_SPEED = 0
-    static var ROTATION_START = 0
-    static var ROTATION_RANGE = 0
-    static var ROTATION_SPEED = 0
+    static var config : [String : Any] = [
+        "COLOR_DEB" : UIColor.yellow,
+        "EMITTER_BIRTHRATE" : 100,
+        "EMITTER_MAXIMUM" : 0,
+        "LIFETIME_START" : 1,
+        "LIFETIME_RANGE" : 0,
+        "POSITION_RANGE_X" : 0,
+        "POSITION_RANGE_Y" : 0,
+        "POSITION_RANGE_Z" : 0,
+        "ANGLE_START" : 0,
+        "ANGLE_RANGE" : 0,
+        "SPEED_START" : 0,
+        "SPEED_RANGE" : 0,
+        "ACCELERATION_X" : 0,
+        "ACCELERATION_Y" : 0,
+        "ALPHA_START" : 0,
+        "ALPHA_RANGE" : 0,
+        "ALPHA_SPEED" : 0,
+        "SCALE_START" : 0,
+        "SCALE_RANGE" : 0,
+        "SCALE_SPEED" : 0,
+        "ROTATION_START" : 0,
+        "ROTATION_RANGE" : 0,
+        "ROTATION_SPEED" : 0
+    ]
     
     override init() {
         super.init()
