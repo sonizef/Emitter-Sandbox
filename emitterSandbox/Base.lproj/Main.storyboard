@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -103,16 +104,60 @@
                                             <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Tk8-Ff-VAL"/>
                                         </connections>
                                     </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBF-PG-bC2">
+                                        <rect key="frame" x="8" y="90" width="79" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="vIo-mx-2Un">
+                                        <rect key="frame" x="6" y="118" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Wfm-Cy-obK"/>
+                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="aFe-ix-Hqp"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="O21-TK-zz1">
+                                        <rect key="frame" x="96" y="118" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="xbS-X4-HwZ"/>
+                                            <action selector="actPositionRangeY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Cxj-DL-19j"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpj-Vd-NKw">
+                                        <rect key="frame" x="135.5" y="104" width="8" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-Zk-L8p">
+                                        <rect key="frame" x="45.5" y="104" width="8" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="HBF-PG-bC2" firstAttribute="top" secondItem="PPL-Ob-9KV" secondAttribute="bottom" constant="2" id="0lN-H9-Pub"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="35H-Tb-3dP"/>
+                                    <constraint firstItem="vIo-mx-2Un" firstAttribute="width" secondItem="e0B-Yo-pbz" secondAttribute="width" multiplier="0.5" constant="-12" id="7cp-kg-2vp"/>
+                                    <constraint firstItem="O21-TK-zz1" firstAttribute="width" secondItem="vIo-mx-2Un" secondAttribute="width" id="Ada-eH-gt0"/>
+                                    <constraint firstItem="vIo-mx-2Un" firstAttribute="top" secondItem="GbA-Zk-L8p" secondAttribute="bottom" id="AxD-2g-A82"/>
                                     <constraint firstAttribute="trailing" secondItem="PPL-Ob-9KV" secondAttribute="trailing" constant="8" id="Fku-cu-5Oq"/>
                                     <constraint firstItem="Q2x-ub-pUr" firstAttribute="top" secondItem="yz9-Pw-Fkv" secondAttribute="bottom" constant="8" id="JAZ-gL-KCp"/>
                                     <constraint firstItem="yz9-Pw-Fkv" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="K6f-kr-MXu"/>
+                                    <constraint firstItem="GbA-Zk-L8p" firstAttribute="top" secondItem="HBF-PG-bC2" secondAttribute="bottom" id="M3R-9a-Xpn"/>
                                     <constraint firstItem="yz9-Pw-Fkv" firstAttribute="top" secondItem="e0B-Yo-pbz" secondAttribute="top" constant="16" id="NfR-Jg-XbR"/>
+                                    <constraint firstItem="O21-TK-zz1" firstAttribute="leading" secondItem="vIo-mx-2Un" secondAttribute="trailing" constant="8" id="VN9-YV-bRY"/>
                                     <constraint firstItem="Q2x-ub-pUr" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="b3n-bd-ih8"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="top" secondItem="Q2x-ub-pUr" secondAttribute="bottom" id="bQj-1R-QPQ"/>
+                                    <constraint firstItem="HBF-PG-bC2" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="kNc-lO-VPE"/>
+                                    <constraint firstItem="O21-TK-zz1" firstAttribute="top" secondItem="vIo-mx-2Un" secondAttribute="top" id="t0H-Qf-FTD"/>
+                                    <constraint firstItem="vIo-mx-2Un" firstAttribute="centerX" secondItem="GbA-Zk-L8p" secondAttribute="centerX" id="t7D-Zh-Gm7"/>
+                                    <constraint firstItem="O21-TK-zz1" firstAttribute="centerX" secondItem="jpj-Vd-NKw" secondAttribute="centerX" id="tbp-uC-3fj"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="vjI-3h-BpG"/>
+                                    <constraint firstItem="jpj-Vd-NKw" firstAttribute="top" secondItem="GbA-Zk-L8p" secondAttribute="top" id="zFa-BF-48q"/>
+                                    <constraint firstItem="vIo-mx-2Un" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="zvf-r3-17J"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -132,6 +177,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="sldEmitterBirthrate" destination="PPL-Ob-9KV" id="g6F-ue-rv0"/>
+                        <outlet property="sldPositionRangeX" destination="vIo-mx-2Un" id="FrF-a5-QZt"/>
+                        <outlet property="sldPositionRangeY" destination="O21-TK-zz1" id="llU-Fp-NFM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auL-B0-LON" userLabel="First Responder" sceneMemberID="firstResponder"/>

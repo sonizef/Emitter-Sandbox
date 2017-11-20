@@ -12,6 +12,9 @@ class MenuViewController: UIViewController {
     
     // Déclaration de nos outlets
     @IBOutlet weak var sldEmitterBirthrate: UISlider!
+    @IBOutlet weak var sldPositionRangeX: UISlider!
+    @IBOutlet weak var sldPositionRangeY: UISlider!
+    
     
     // Déclarations de nos variables
     var parentController : EmitterViewController!
@@ -35,6 +38,21 @@ class MenuViewController: UIViewController {
         customEmitter.config["EMITTER_BIRTHRATE"] = value
         parentController.scene.currentEmitter.particleBirthRate = value
     }
+    
+    // Position Range X
+    @IBAction func actPositionRangeX(_ sender: Any) {
+        let value = CGFloat(sldPositionRangeX.value)
+        customEmitter.config["POSITION_RANGE_X"] = value
+        parentController.scene.currentEmitter.particlePositionRange.dx = value
+    }
+    
+    // Position Range Y
+    @IBAction func actPositionRangeY(_ sender: Any) {
+        let value = CGFloat(sldPositionRangeY.value)
+        customEmitter.config["POSITION_RANGE_Y"] = value
+        parentController.scene.currentEmitter.particlePositionRange.dy = value
+    }
+    
     
     
 }
