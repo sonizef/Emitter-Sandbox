@@ -22,13 +22,21 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         self.view.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Fonction qui met à jour nos sliders en fonction du type choisi
+    // Cette fonction est appelé à chaque chargement d'un type d'Emitter
+    // Il est inutile de l'appeler à chaque ouverture de menu
+    func updateSliderFrom(){
+        sldEmitterBirthrate.value = Float(customEmitter.config["EMITTER_BIRTHRATE"] as! CGFloat)
+        sldPositionRangeX.value = Float(customEmitter.config["POSITION_RANGE_X"] as! CGFloat)
+        sldPositionRangeY.value = Float(customEmitter.config["POSITION_RANGE_Y"] as! CGFloat)
     }
     
     // Actions de nos sliders

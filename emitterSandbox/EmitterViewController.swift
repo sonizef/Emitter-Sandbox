@@ -31,7 +31,10 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         // On place notre menu fermé de manière responsive sur l'écran
         menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.5, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
+        // On met à jour les sliders du menu
+        menuController.updateSliderFrom()
         
+        // Création de notre alert ( bibliotheque )
         initAlert()
         
         
@@ -146,12 +149,17 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Création d'une alert
         alertLibrary = UIAlertController(title: "Choix d'un type", message: "\n\n\n\n\n\n", preferredStyle: .actionSheet)
         
-        // Création de notre action si "Ok"
+        // Création de notre action "Ok"
         let actOk = UIAlertAction(title: "Ok", style: .default) { (bool) in
             
             // On recupere notre type d'Emitter et on recupere les configurations
             // de celui-ci dans notre dictionnaire "config"
             customEmitter.setDictionaryFromCatalogue(Array(catalogueEmitter.catalogue)[self.pickerEmitterType.selectedRow(inComponent: 0)].key)
+            
+            // Une fois notre dictionnaire à jour on appelle la fonction qui met
+            // à jour nos sliders
+            self.menuController.updateSliderFrom()
+            
 
         }
         
