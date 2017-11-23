@@ -142,27 +142,73 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVF-Yc-df9">
+                                        <rect key="frame" x="8" y="148" width="30" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-kU-CKr">
+                                        <rect key="frame" x="6" y="176" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actAngleStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Lem-MU-fB4"/>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="2oL-iG-yST"/>
+                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="77d-Nh-Qf5"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-2R-uTJ">
+                                        <rect key="frame" x="36.5" y="162" width="26" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ek-GO-iaD">
+                                        <rect key="frame" x="122.5" y="162" width="33" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6.2831999999999999" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Bqk-79-Wcc">
+                                        <rect key="frame" x="95.5" y="176" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actAngleRange:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="AhA-9t-ftR"/>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="YE7-Ki-GAz"/>
+                                            <action selector="actPositionRangeY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="aIL-JF-Zmu"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HBF-PG-bC2" firstAttribute="top" secondItem="PPL-Ob-9KV" secondAttribute="bottom" constant="2" id="0lN-H9-Pub"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="35H-Tb-3dP"/>
                                     <constraint firstItem="vIo-mx-2Un" firstAttribute="width" secondItem="e0B-Yo-pbz" secondAttribute="width" multiplier="0.5" constant="-12" id="7cp-kg-2vp"/>
+                                    <constraint firstItem="Iyk-kU-CKr" firstAttribute="width" secondItem="e0B-Yo-pbz" secondAttribute="width" multiplier="0.5" constant="-12" id="8UC-3X-WrL"/>
+                                    <constraint firstItem="Bqk-79-Wcc" firstAttribute="top" secondItem="6Ek-GO-iaD" secondAttribute="bottom" id="9lw-1V-Zsh"/>
                                     <constraint firstItem="O21-TK-zz1" firstAttribute="width" secondItem="vIo-mx-2Un" secondAttribute="width" id="Ada-eH-gt0"/>
                                     <constraint firstItem="vIo-mx-2Un" firstAttribute="top" secondItem="GbA-Zk-L8p" secondAttribute="bottom" id="AxD-2g-A82"/>
+                                    <constraint firstItem="Iyk-kU-CKr" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="ERa-14-WIZ"/>
                                     <constraint firstAttribute="trailing" secondItem="PPL-Ob-9KV" secondAttribute="trailing" constant="8" id="Fku-cu-5Oq"/>
                                     <constraint firstItem="Q2x-ub-pUr" firstAttribute="top" secondItem="yz9-Pw-Fkv" secondAttribute="bottom" constant="8" id="JAZ-gL-KCp"/>
                                     <constraint firstItem="yz9-Pw-Fkv" firstAttribute="centerX" secondItem="e0B-Yo-pbz" secondAttribute="centerX" id="K6f-kr-MXu"/>
                                     <constraint firstItem="GbA-Zk-L8p" firstAttribute="top" secondItem="HBF-PG-bC2" secondAttribute="bottom" id="M3R-9a-Xpn"/>
+                                    <constraint firstItem="aVF-Yc-df9" firstAttribute="top" secondItem="vIo-mx-2Un" secondAttribute="bottom" id="MCE-JN-Sf8"/>
                                     <constraint firstItem="yz9-Pw-Fkv" firstAttribute="top" secondItem="e0B-Yo-pbz" secondAttribute="top" constant="16" id="NfR-Jg-XbR"/>
+                                    <constraint firstItem="Bqk-79-Wcc" firstAttribute="top" secondItem="Iyk-kU-CKr" secondAttribute="top" id="TbU-nX-v7U"/>
                                     <constraint firstItem="O21-TK-zz1" firstAttribute="leading" secondItem="vIo-mx-2Un" secondAttribute="trailing" constant="8" id="VN9-YV-bRY"/>
+                                    <constraint firstItem="Bqk-79-Wcc" firstAttribute="width" secondItem="Iyk-kU-CKr" secondAttribute="width" id="Wrn-Et-26T"/>
                                     <constraint firstItem="Q2x-ub-pUr" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="b3n-bd-ih8"/>
+                                    <constraint firstItem="Iyk-kU-CKr" firstAttribute="centerX" secondItem="M7K-2R-uTJ" secondAttribute="centerX" id="b4c-3o-kpP"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="top" secondItem="Q2x-ub-pUr" secondAttribute="bottom" id="bQj-1R-QPQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bqk-79-Wcc" secondAttribute="trailing" constant="8" id="h3k-3H-VGI"/>
+                                    <constraint firstItem="M7K-2R-uTJ" firstAttribute="top" secondItem="aVF-Yc-df9" secondAttribute="bottom" id="hEl-oR-Tmu"/>
+                                    <constraint firstItem="Iyk-kU-CKr" firstAttribute="top" secondItem="M7K-2R-uTJ" secondAttribute="bottom" id="k31-Pr-3yr"/>
                                     <constraint firstItem="HBF-PG-bC2" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="kNc-lO-VPE"/>
                                     <constraint firstItem="O21-TK-zz1" firstAttribute="top" secondItem="vIo-mx-2Un" secondAttribute="top" id="t0H-Qf-FTD"/>
                                     <constraint firstItem="vIo-mx-2Un" firstAttribute="centerX" secondItem="GbA-Zk-L8p" secondAttribute="centerX" id="t7D-Zh-Gm7"/>
                                     <constraint firstItem="O21-TK-zz1" firstAttribute="centerX" secondItem="jpj-Vd-NKw" secondAttribute="centerX" id="tbp-uC-3fj"/>
+                                    <constraint firstItem="6Ek-GO-iaD" firstAttribute="centerX" secondItem="Bqk-79-Wcc" secondAttribute="centerX" id="un3-Jd-WJA"/>
                                     <constraint firstItem="PPL-Ob-9KV" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="vjI-3h-BpG"/>
                                     <constraint firstItem="jpj-Vd-NKw" firstAttribute="top" secondItem="GbA-Zk-L8p" secondAttribute="top" id="zFa-BF-48q"/>
+                                    <constraint firstItem="aVF-Yc-df9" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="zJJ-o6-QHx"/>
                                     <constraint firstItem="vIo-mx-2Un" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="zvf-r3-17J"/>
                                 </constraints>
                             </scrollView>
@@ -182,6 +228,8 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="sldAngleRange" destination="Bqk-79-Wcc" id="Qk3-R6-nYA"/>
+                        <outlet property="sldAngleStart" destination="Iyk-kU-CKr" id="AsN-j6-zkq"/>
                         <outlet property="sldEmitterBirthrate" destination="PPL-Ob-9KV" id="g6F-ue-rv0"/>
                         <outlet property="sldPositionRangeX" destination="vIo-mx-2Un" id="FrF-a5-QZt"/>
                         <outlet property="sldPositionRangeY" destination="O21-TK-zz1" id="llU-Fp-NFM"/>

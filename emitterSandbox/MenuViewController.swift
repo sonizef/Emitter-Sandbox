@@ -14,6 +14,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var sldEmitterBirthrate: UISlider!
     @IBOutlet weak var sldPositionRangeX: UISlider!
     @IBOutlet weak var sldPositionRangeY: UISlider!
+    @IBOutlet weak var sldAngleStart: UISlider!
+    @IBOutlet weak var sldAngleRange: UISlider!
     
     
     // Déclarations de nos variables
@@ -37,6 +39,8 @@ class MenuViewController: UIViewController {
         sldEmitterBirthrate.value = Float(customEmitter.config["EMITTER_BIRTHRATE"] as! CGFloat)
         sldPositionRangeX.value = Float(customEmitter.config["POSITION_RANGE_X"] as! CGFloat)
         sldPositionRangeY.value = Float(customEmitter.config["POSITION_RANGE_Y"] as! CGFloat)
+        sldAngleStart.value = Float(customEmitter.config["ANGLE_START"] as! CGFloat)
+        sldAngleRange.value = Float(customEmitter.config["ANGLE_RANGE"] as! CGFloat)
     }
     
     // Actions de nos sliders
@@ -61,6 +65,21 @@ class MenuViewController: UIViewController {
         parentController.scene.currentEmitter.particlePositionRange.dy = value
     }
     
+    // Angle Start
+    @IBAction func actAngleStart(_ sender: Any) {
+        let value = CGFloat(sldAngleStart.value)
+        customEmitter.config["ANGLE_START"] = value
+        parentController.scene.currentEmitter.emissionAngle = value
+        print("start", parentController.scene.currentEmitter.emissionAngle)
+    }
+    
+    // Angle Rangle
+    @IBAction func actAngleRange(_ sender: Any) {
+        let value = CGFloat(sldAngleRange.value)
+        customEmitter.config["ANGLE_RANGE"] = value
+        parentController.scene.currentEmitter.emissionAngleRange = value
+        print("range", parentController.scene.currentEmitter.emissionAngle)
+    }
     
     
 }
