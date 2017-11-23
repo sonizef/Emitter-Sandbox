@@ -13,15 +13,16 @@ import UIKit
 class catalogueEmitter {
     
     // Nos différents types d'Emitter
-    enum type {
-        case Spark, Fire
+    enum type : String{
+        case Spark = "Spark"
+        case Fire = "Fire"
     }
     
     // Un dictionnaire contenant différents Emitter pré-enregistré
     // En fonction des types d'Emitter declaré ci-dessus
-    
     static let catalogue : [type : [String : Any] ] = [
         type.Spark : [
+            "NAME" : "Spark",
             "TEXTURE" : SKTexture.init(imageNamed: "spark.png"),
             "COLOR_DEB" : UIColor.init(red: 255/255, green: 179/255, blue: 60/255, alpha: 1),
             "EMITTER_BIRTHRATE" : CGFloat(2000),
@@ -50,6 +51,7 @@ class catalogueEmitter {
             "COLOR_BLEND_MODE" : SKBlendMode.add
         ],
         type.Fire : [
+            "NAME" : "Fire",
             "TEXTURE" : SKTexture.init(imageNamed: "spark.png"),
             "COLOR_DEB" : UIColor.init(red: 78/255, green: 33/255, blue: 6/255, alpha: 1),
             "EMITTER_BIRTHRATE" : CGFloat(455.28),

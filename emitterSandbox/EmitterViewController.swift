@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class EmitterViewController: UIViewController{
+class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     // Déclaration de nos outlets
     @IBOutlet weak var menu: UIView!
@@ -19,16 +19,19 @@ class EmitterViewController: UIViewController{
     static var menuIsOpen : Bool = false
     
     // Déclaration de nos constantes
-    let list = ["Spark", "Fire"]
     
     // Déclaration de nos variables
     var scene : EmitterScene!
+    var alertLibrary : UIAlertController!
+    var pickerEmitterType : UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // On place notre menu fermé de manière responsive sur l'écran
         menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.5, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
+        
+        initAlert()
         
         
         // Chargement 'GameScene.sks' en tant que GKScene. Cela permet de recuperer les élèments de notre scène
@@ -80,6 +83,21 @@ class EmitterViewController: UIViewController{
         return true
     }
     
+    // Nombre de compenant dans notre picker
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // Nombre de ligne par compenant dans notre picker
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return catalogueEmitter.catalogue.count
+    }
+    
+    // Affichage des lignes de notre picker
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return (Array(catalogueEmitter.catalogue)[row].value["NAME"] as! String)
+    }
+    
     // Liaison qui permet de passer notre currentEmitter vers notre menu
     // Afin de pouvoir modifier celui-ci, chaque element à la fois
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,6 +138,45 @@ class EmitterViewController: UIViewController{
             self.scene.disabledEmitter()
             EmitterViewController.menuIsOpen = false
         })
+    }
+    
+    func initAlert(){
+        // Création d'une alert
+        alertLibrary = UIAlertController(title: "Choix d'un type", message: "\n\n\n\n\n\n", preferredStyle: .actionSheet)
+        
+        // Création de notre action si "Ok"
+        let actOk = UIAlertAction(title: "Ok", style: .default) { (bool) in
+            
+            // On recupere notre type d'Emitter et on recupere les configurations
+            // de celui-ci dans notre dictionnaire "config"
+            customEmitter.setDictionaryFromCatalogue(Array(catalogueEmitter.catalogue)[self.pickerEmitterType.selectedRow(inComponent: 0)].key)
+
+        }
+        
+        // Création de notre action "Fermer"
+        let actClose = UIAlertAction(title: "Fermer", style: .cancel) { (bool) in
+            print("On ne fait rien")
+        }
+        
+        // Initialisation de notre picker
+        pickerEmitterType = UIPickerView(frame: CGRect(x: 0, y: 25, width: alertLibrary.view.frame.width - 25, height: 150))
+        
+        pickerEmitterType.delegate = self
+        pickerEmitterType.dataSource = self
+        
+        
+        
+        // On ajoute nos actions et notre picker à notre alert
+        alertLibrary.addAction(actOk)
+        alertLibrary.addAction(actClose)
+        alertLibrary.view.addSubview(pickerEmitterType)
+    }
+    
+    // Fonction qui ouvre notre libraire d'emitter
+    @IBAction func actOpenLibrary(_ sender: Any) {
+        // On affiche notre alert
+        self.present(alertLibrary, animated: true, completion: nil)
+        
     }
     
 }

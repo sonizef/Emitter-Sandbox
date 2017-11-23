@@ -60,7 +60,7 @@ class customEmitter : SKEmitterNode{
     }
     
     // On change notre dictionnaire en fonction d'un type déjà stocké dans le catalogue
-    private func setDictionaryFromCatalogue(_ typeEmitter : catalogueEmitter.type){
+    static func setDictionaryFromCatalogue(_ typeEmitter : catalogueEmitter.type){
         customEmitter.config = catalogueEmitter.getEmitterFromCatalogue(typeEmitter)
     }
     
