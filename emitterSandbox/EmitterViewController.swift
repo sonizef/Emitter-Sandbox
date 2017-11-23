@@ -21,6 +21,7 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // Déclaration de nos constantes
     
     // Déclaration de nos variables
+    var menuController : MenuViewController!
     var scene : EmitterScene!
     var alertLibrary : UIAlertController!
     var pickerEmitterType : UIPickerView!
@@ -99,10 +100,11 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     // Liaison qui permet de passer notre currentEmitter vers notre menu
-    // Afin de pouvoir modifier celui-ci, chaque element à la fois
+    // Afin de pouvoir modifier celui-ci, chaque parametre à la fois
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segueMenu"){
             let vc = segue.destination as! MenuViewController
+            menuController = vc
             vc.parentController = self
         }
     }
