@@ -16,6 +16,10 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var sldPositionRangeY: customSlider!
     @IBOutlet weak var sldAngleStart: customSlider!
     @IBOutlet weak var sldAngleRange: customSlider!
+    @IBOutlet weak var sldSpeedStart: customSlider!
+    @IBOutlet weak var sldSpeedRange: customSlider!
+    @IBOutlet weak var sldAccelerationX: customSlider!
+    @IBOutlet weak var sldAccelerationY: customSlider!
     
     
     // Déclarations de nos variables
@@ -76,11 +80,39 @@ class MenuViewController: UIViewController {
         parentController.scene.currentEmitter.emissionAngle = value
     }
     
-    // Angle Rangle
+    // Angle Range
     @IBAction func actAngleRange(_ sender: Any) {
         let value = CGFloat(sldAngleRange.value)
         customEmitter.config["ANGLE_RANGE"] = value
         parentController.scene.currentEmitter.emissionAngleRange = value
+    }
+    
+    // Speed Start
+    @IBAction func actSpeedStart(_ sender: Any) {
+        let value = CGFloat(sldSpeedStart.value)
+        customEmitter.config["SPEED_START"] = value
+        parentController.scene.currentEmitter.particleSpeed = value
+    }
+    
+    // Speed Range
+    @IBAction func actSpeedRange(_ sender: Any) {
+        let value = CGFloat(sldSpeedRange.value)
+        customEmitter.config["SPEED_RANGE"] = value
+        parentController.scene.currentEmitter.particleSpeedRange = value
+    }
+    
+    // Acceleration Start
+    @IBAction func actAccelerationX(_ sender: Any) {
+        let value = CGFloat(sldAccelerationX.value)
+        customEmitter.config["ACCELERATION_X"] = value
+        parentController.scene.currentEmitter.xAcceleration = value
+    }
+    
+    // Acceleration Range
+    @IBAction func actAccelerationY(_ sender: Any) {
+        let value = CGFloat(sldAccelerationY.value)
+        customEmitter.config["ACCELERATION_Y"] = value
+        parentController.scene.currentEmitter.yAcceleration = value
     }
     
     
