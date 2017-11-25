@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B35C91D1FC98B4900C399ED /* customSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35C91C1FC98B4900C399ED /* customSlider.swift */; };
 		8B691F131FB9E534001409E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B691F121FB9E534001409E5 /* AppDelegate.swift */; };
 		8B691F151FB9E534001409E5 /* EmitterScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F141FB9E534001409E5 /* EmitterScene.sks */; };
 		8B691F191FB9E534001409E5 /* EmitterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B691F181FB9E534001409E5 /* EmitterScene.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B35C91C1FC98B4900C399ED /* customSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customSlider.swift; sourceTree = "<group>"; };
 		8B691F0F1FB9E534001409E5 /* emitterSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emitterSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B691F121FB9E534001409E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B691F141FB9E534001409E5 /* EmitterScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EmitterScene.sks; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				8B691F181FB9E534001409E5 /* EmitterScene.swift */,
 				8B691F1A1FB9E534001409E5 /* EmitterViewController.swift */,
 				8BE4060E1FBF195400B3D3CC /* MenuViewController.swift */,
+				8B35C91C1FC98B4900C399ED /* customSlider.swift */,
 				8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */,
 				8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */,
 				8B691F1C1FB9E534001409E5 /* Main.storyboard */,
@@ -171,6 +174,7 @@
 				8B691F191FB9E534001409E5 /* EmitterScene.swift in Sources */,
 				8BE4060F1FBF195400B3D3CC /* MenuViewController.swift in Sources */,
 				8B691F1B1FB9E534001409E5 /* EmitterViewController.swift in Sources */,
+				8B35C91D1FC98B4900C399ED /* customSlider.swift in Sources */,
 				8B691F131FB9E534001409E5 /* AppDelegate.swift in Sources */,
 				8BFD3F641FBEDC3700DD2012 /* catalogueEmitter.swift in Sources */,
 				8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */,
