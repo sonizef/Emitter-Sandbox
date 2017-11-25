@@ -22,6 +22,7 @@ class customSlider: UISlider {
     var viewLabel : UIView!
     var lblValue : UILabel!
     var pos : CGFloat = 0
+    var isAngle = false
     
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -49,9 +50,16 @@ class customSlider: UISlider {
     // Fonction qui met à jour le label avec la valeur courante et la position correspondante
     // Appelée à chaque action sur notre slider
     private func updateLbl(){
-        lblValue.text = String(Int(self.value))
-
-        pos = 0
+        
+        // Si ce n'est pas un angle on affiche la valeur courante
+        if(!isAngle){
+            lblValue.text = String(Int(self.value))
+        }
+        // Si c'est un angle on effectue une conversion radian -> degrée
+        // Pour un affichage plus simple
+        else{
+            lblValue.text = "\(Int((self.value * 180) / Float.pi))°"
+        }
         
     }
     

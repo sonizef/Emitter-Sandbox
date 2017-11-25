@@ -25,6 +25,10 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.clear
+        
+        //On configure si notre slider retourne un angle ou non
+        sldAngleStart.isAngle = true
+        sldAngleRange.isAngle = true
     }
 
     override func didReceiveMemoryWarning() {
