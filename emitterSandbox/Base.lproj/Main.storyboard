@@ -104,32 +104,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2500" minValue="0.0" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="PPL-Ob-9KV">
-                                        <rect key="frame" x="6" y="58" width="176" height="31"/>
-                                        <connections>
-                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Tk8-Ff-VAL"/>
-                                        </connections>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBF-PG-bC2">
                                         <rect key="frame" x="8" y="90" width="79" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="vIo-mx-2Un">
-                                        <rect key="frame" x="6" y="118" width="86.5" height="31"/>
-                                        <connections>
-                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Wfm-Cy-obK"/>
-                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="aFe-ix-Hqp"/>
-                                        </connections>
-                                    </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="O21-TK-zz1">
-                                        <rect key="frame" x="96" y="118" width="86.5" height="31"/>
-                                        <connections>
-                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="xbS-X4-HwZ"/>
-                                            <action selector="actPositionRangeY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Cxj-DL-19j"/>
-                                        </connections>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpj-Vd-NKw">
                                         <rect key="frame" x="135.5" y="104" width="8" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -148,14 +128,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-kU-CKr">
-                                        <rect key="frame" x="6" y="176" width="86.5" height="31"/>
-                                        <connections>
-                                            <action selector="actAngleStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Lem-MU-fB4"/>
-                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="2oL-iG-yST"/>
-                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="77d-Nh-Qf5"/>
-                                        </connections>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-2R-uTJ">
                                         <rect key="frame" x="36.5" y="162" width="26" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -168,7 +140,35 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6.2831999999999999" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Bqk-79-Wcc">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2500" minValue="0.0" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="PPL-Ob-9KV" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="58" width="176" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Tk8-Ff-VAL"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="vIo-mx-2Un" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="118" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Wfm-Cy-obK"/>
+                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="aFe-ix-Hqp"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="O21-TK-zz1" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="118" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="xbS-X4-HwZ"/>
+                                            <action selector="actPositionRangeY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Cxj-DL-19j"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-kU-CKr" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="176" width="86.5" height="31"/>
+                                        <connections>
+                                            <action selector="actAngleStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Lem-MU-fB4"/>
+                                            <action selector="actEmitterBirthrate:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="2oL-iG-yST"/>
+                                            <action selector="actPositionRangeX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="77d-Nh-Qf5"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6.2831999999999999" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Bqk-79-Wcc" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="95.5" y="176" width="86.5" height="31"/>
                                         <connections>
                                             <action selector="actAngleRange:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="AhA-9t-ftR"/>

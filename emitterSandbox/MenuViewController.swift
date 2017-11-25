@@ -11,11 +11,11 @@ import UIKit
 class MenuViewController: UIViewController {
     
     // Déclaration de nos outlets
-    @IBOutlet weak var sldEmitterBirthrate: UISlider!
-    @IBOutlet weak var sldPositionRangeX: UISlider!
-    @IBOutlet weak var sldPositionRangeY: UISlider!
-    @IBOutlet weak var sldAngleStart: UISlider!
-    @IBOutlet weak var sldAngleRange: UISlider!
+    @IBOutlet weak var sldEmitterBirthrate: customSlider!
+    @IBOutlet weak var sldPositionRangeX: customSlider!
+    @IBOutlet weak var sldPositionRangeY: customSlider!
+    @IBOutlet weak var sldAngleStart: customSlider!
+    @IBOutlet weak var sldAngleRange: customSlider!
     
     
     // Déclarations de nos variables
@@ -70,7 +70,6 @@ class MenuViewController: UIViewController {
         let value = CGFloat(sldAngleStart.value)
         customEmitter.config["ANGLE_START"] = value
         parentController.scene.currentEmitter.emissionAngle = value
-        print("start", parentController.scene.currentEmitter.emissionAngle)
     }
     
     // Angle Rangle
@@ -78,7 +77,6 @@ class MenuViewController: UIViewController {
         let value = CGFloat(sldAngleRange.value)
         customEmitter.config["ANGLE_RANGE"] = value
         parentController.scene.currentEmitter.emissionAngleRange = value
-        print("range", parentController.scene.currentEmitter.emissionAngle)
     }
     
     
