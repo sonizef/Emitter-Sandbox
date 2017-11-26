@@ -20,6 +20,15 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var sldSpeedRange: customSlider!
     @IBOutlet weak var sldAccelerationX: customSlider!
     @IBOutlet weak var sldAccelerationY: customSlider!
+    @IBOutlet weak var sldAlphaStart: customSlider!
+    @IBOutlet weak var sldAlphaRange: customSlider!
+    @IBOutlet weak var sldAlphaSpeed: customSlider!
+    @IBOutlet weak var sldScaleStart: customSlider!
+    @IBOutlet weak var sldScaleRange: customSlider!
+    @IBOutlet weak var sldScaleSpeed: customSlider!
+    @IBOutlet weak var sldRotationStart: customSlider!
+    @IBOutlet weak var sldRotationRange: customSlider!
+    @IBOutlet weak var sldRotationSpeed: customSlider!
     
     
     // Déclarations de nos variables
@@ -49,6 +58,13 @@ class MenuViewController: UIViewController {
         sldPositionRangeY.value = Float(customEmitter.config["POSITION_RANGE_Y"] as! CGFloat)
         sldAngleStart.value = Float(customEmitter.config["ANGLE_START"] as! CGFloat)
         sldAngleRange.value = Float(customEmitter.config["ANGLE_RANGE"] as! CGFloat)
+        sldSpeedStart.value = Float(customEmitter.config["SPEED_START"] as! CGFloat)
+        sldSpeedRange.value = Float(customEmitter.config["SPEED_RANGE"] as! CGFloat)
+        sldAccelerationX.value = Float(customEmitter.config["ACCELERATION_X"] as! CGFloat)
+        sldAccelerationY.value = Float(customEmitter.config["ACCELERATION_Y"] as! CGFloat)
+        sldAlphaStart.value = Float(customEmitter.config["ALPHA_START"] as! CGFloat)
+        sldAlphaRange.value = Float(customEmitter.config["ALPHA_RANGE"] as! CGFloat)
+        sldAlphaSpeed.value = Float(customEmitter.config["ALPHA_SPEED"] as! CGFloat)
     }
     
     // Actions de nos sliders
@@ -113,6 +129,69 @@ class MenuViewController: UIViewController {
         let value = CGFloat(sldAccelerationY.value)
         customEmitter.config["ACCELERATION_Y"] = value
         parentController.scene.currentEmitter.yAcceleration = value
+    }
+    
+    // Alpha Start
+    @IBAction func actAlphaStart(_ sender: Any) {
+        let value = CGFloat(sldAlphaStart.value)
+        customEmitter.config["ALPHA_START"] = value
+        parentController.scene.currentEmitter.particleAlpha = value
+    }
+    
+    // Alpha Range
+    @IBAction func actAlphaRange(_ sender: Any) {
+        let value = CGFloat(sldAlphaRange.value)
+        customEmitter.config["ALPHA_RANGE"] = value
+        parentController.scene.currentEmitter.particleAlphaRange = value
+    }
+    
+    // Alpha Speed
+    @IBAction func actAlphaSpeed(_ sender: Any) {
+        let value = CGFloat(sldAlphaSpeed.value)
+        customEmitter.config["ALPHA_SPEED"] = value
+        parentController.scene.currentEmitter.particleAlphaSpeed = value
+    }
+    
+    // Scale Start
+    @IBAction func actScaleStart(_ sender: Any) {
+        let value = CGFloat(sldScaleStart.value)
+        customEmitter.config["SCALE_START"] = value
+        parentController.scene.currentEmitter.particleScale = value
+    }
+    
+    // Scale Range
+    @IBAction func actScaleRange(_ sender: Any) {
+        let value = CGFloat(sldScaleRange.value)
+        customEmitter.config["SCALE_RANGE"] = value
+        parentController.scene.currentEmitter.particleScaleRange = value
+    }
+    
+    // Scale Speed
+    @IBAction func actScaleSpeed(_ sender: Any) {
+        let value = CGFloat(sldScaleSpeed.value)
+        customEmitter.config["SCALE_SPEED"] = value
+        parentController.scene.currentEmitter.particleScaleSpeed = value
+    }
+    
+    // Rotation Start
+    @IBAction func actRotationStart(_ sender: Any) {
+        let value = CGFloat(sldRotationStart.value)
+        customEmitter.config["ROTATION_START"] = value
+        parentController.scene.currentEmitter.particleRotation = value
+    }
+    
+    // Rotation Range
+    @IBAction func actRotationRange(_ sender: Any) {
+        let value = CGFloat(sldRotationRange.value)
+        customEmitter.config["ROTATION_RANGE"] = value
+        parentController.scene.currentEmitter.particleRotationRange = value
+    }
+    
+    // Rotation Speed
+    @IBAction func actRotationSpeed(_ sender: Any) {
+        let value = CGFloat(sldRotationSpeed.value)
+        customEmitter.config["ROTATION_SPEED"] = value
+        parentController.scene.currentEmitter.particleRotationSpeed = value
     }
     
     
