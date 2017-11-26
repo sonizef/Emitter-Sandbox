@@ -298,14 +298,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-Ey-x4e" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-Ey-x4e" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="6" y="434" width="176" height="31"/>
                                         <connections>
                                             <action selector="actAlphaStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="7yK-4v-DeP"/>
                                             <action selector="actScaleStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="nTP-5D-1z1"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-Da-X9w" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-Da-X9w" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="6" y="478" width="86.5" height="31"/>
                                         <connections>
                                             <action selector="actAccelerationX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="TOM-wr-gte"/>
@@ -313,7 +313,7 @@
                                             <action selector="actScaleRange:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="rm2-JV-LPB"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="T8p-l4-1SB" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="T8p-l4-1SB" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="95.5" y="478" width="86.5" height="31"/>
                                         <connections>
                                             <action selector="actAccelerationY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="7Xp-aG-Coh"/>
@@ -339,7 +339,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Au3-Pa-Fon" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Au3-Pa-Fon" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="6" y="524" width="176" height="31"/>
                                         <connections>
                                             <action selector="actAlphaStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="gxL-ZW-IcU"/>
@@ -347,7 +347,7 @@
                                             <action selector="actScaleStart:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="HFh-1v-QQf"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="UsY-WW-26V" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="UsY-WW-26V" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="6" y="568" width="86.5" height="31"/>
                                         <connections>
                                             <action selector="actAccelerationX:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="ScJ-JZ-hFq"/>
@@ -356,7 +356,7 @@
                                             <action selector="actScaleRange:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="ffV-8b-9rz"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="n9c-b5-NK3" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6.2831999999999999" minValue="0.0" maxValue="6.2831999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="n9c-b5-NK3" customClass="customSlider" customModule="emitterSandbox" customModuleProvider="target">
                                         <rect key="frame" x="95.5" y="568" width="86.5" height="31"/>
                                         <connections>
                                             <action selector="actAccelerationY:" destination="2Ac-Lg-NxW" eventType="valueChanged" id="Oqv-Gv-xVA"/>
@@ -486,6 +486,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="scrollView" destination="e0B-Yo-pbz" id="cyr-QM-MKr"/>
                         <outlet property="sldAccelerationX" destination="xGw-NR-D3l" id="TCS-jD-c6E"/>
                         <outlet property="sldAccelerationY" destination="cdA-cI-4tP" id="poM-9x-6t0"/>
                         <outlet property="sldAlphaRange" destination="dRH-jk-C5J" id="4Xn-aT-Jf3"/>

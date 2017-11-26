@@ -11,6 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
     
     // Déclaration de nos outlets
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sldEmitterBirthrate: customSlider!
     @IBOutlet weak var sldPositionRangeX: customSlider!
     @IBOutlet weak var sldPositionRangeY: customSlider!
@@ -39,9 +40,15 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.clear
         
+        // On configure la hauteur de notre scroll
+        scrollView.frame = self.view.frame
+        
         //On configure si notre slider retourne un angle ou non
         sldAngleStart.isAngle = true
         sldAngleRange.isAngle = true
+        sldRotationStart.isAngle = true
+        sldRotationRange.isAngle = true
+        sldRotationSpeed.isAngle = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +72,13 @@ class MenuViewController: UIViewController {
         sldAlphaStart.value = Float(customEmitter.config["ALPHA_START"] as! CGFloat)
         sldAlphaRange.value = Float(customEmitter.config["ALPHA_RANGE"] as! CGFloat)
         sldAlphaSpeed.value = Float(customEmitter.config["ALPHA_SPEED"] as! CGFloat)
+        sldScaleStart.value = Float(customEmitter.config["SCALE_START"] as! CGFloat)
+        sldScaleRange.value = Float(customEmitter.config["SCALE_RANGE"] as! CGFloat)
+        sldScaleSpeed.value = Float(customEmitter.config["SCALE_SPEED"] as! CGFloat)
+        sldRotationStart.value = Float(customEmitter.config["ROTATION_START"] as! CGFloat)
+        sldRotationRange.value = Float(customEmitter.config["ROTATION_RANGE"] as! CGFloat)
+        sldRotationSpeed.value = Float(customEmitter.config["ROTATION_SPEED"] as! CGFloat)
+
     }
     
     // Actions de nos sliders
