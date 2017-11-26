@@ -31,6 +31,8 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         // On place notre menu fermé de manière responsive sur l'écran
         menu.frame = CGRect(x: self.view.frame.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: self.view.frame.width*0.5, height: self.view.frame.height - (self.navigationController?.navigationBar.bounds.height)!)
+        
+        
         // On met à jour les sliders du menu
         menuController.updateSliderFrom()
         

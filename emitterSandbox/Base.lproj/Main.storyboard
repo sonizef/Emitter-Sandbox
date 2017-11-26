@@ -469,18 +469,22 @@
                                     <constraint firstItem="E8a-ed-l8q" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="zTI-pC-FJ1"/>
                                     <constraint firstItem="vIo-mx-2Un" firstAttribute="leading" secondItem="e0B-Yo-pbz" secondAttribute="leading" constant="8" id="zvf-r3-17J"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="uNN-Zm-zE8"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2Ac-Lg-NxW" id="GED-jA-Umc"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="leading" secondItem="OfD-h7-zI7" secondAttribute="leading" id="Ckm-g8-b0X"/>
-                            <constraint firstAttribute="trailing" secondItem="e0B-Yo-pbz" secondAttribute="trailing" id="F1X-sR-BmT"/>
-                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="VMi-Sg-bHz"/>
-                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="a03-Dq-yvJ"/>
-                            <constraint firstItem="mGi-fJ-SH8" firstAttribute="bottom" secondItem="e0B-Yo-pbz" secondAttribute="bottom" id="hDr-BX-gIs"/>
-                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="trailing" secondItem="mGi-fJ-SH8" secondAttribute="trailing" id="hlr-Pd-UEV"/>
-                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="leading" secondItem="mGi-fJ-SH8" secondAttribute="leading" id="mAQ-gH-Csf"/>
-                            <constraint firstItem="mGi-fJ-SH8" firstAttribute="bottom" secondItem="9oW-Ac-QMO" secondAttribute="bottom" id="pXD-1h-OLU"/>
+                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="leading" secondItem="mGi-fJ-SH8" secondAttribute="leading" id="D6L-Xh-eQl"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="trailing" secondItem="mGi-fJ-SH8" secondAttribute="trailing" id="Fzm-48-n2i"/>
+                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="bottom" secondItem="mGi-fJ-SH8" secondAttribute="bottom" id="K7m-1M-ncp"/>
+                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="SQc-ju-s1N"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="bottom" secondItem="mGi-fJ-SH8" secondAttribute="bottom" id="acQ-SI-ER1"/>
+                            <constraint firstItem="9oW-Ac-QMO" firstAttribute="trailing" secondItem="mGi-fJ-SH8" secondAttribute="trailing" id="jcC-pn-zKN"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="leading" secondItem="mGi-fJ-SH8" secondAttribute="leading" id="ltd-x8-8JA"/>
+                            <constraint firstItem="e0B-Yo-pbz" firstAttribute="top" secondItem="mGi-fJ-SH8" secondAttribute="top" id="qol-me-Jdl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mGi-fJ-SH8"/>
                     </view>

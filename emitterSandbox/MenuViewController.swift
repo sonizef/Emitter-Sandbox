@@ -35,13 +35,36 @@ class MenuViewController: UIViewController {
     // Déclarations de nos variables
     var parentController : EmitterViewController!
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        var contentSize : CGFloat = 0
+        
+        // On cherche l'élémeent le plus bas pour définir la zone de scroll
+        for v in self.view.subviews{
+            if(contentSize < v.frame.origin.y + v.frame.height){
+                contentSize = v.frame.origin.y + v.frame.height
+                print(v.frame.maxY)
+                print(contentSize)
+            }
+        }
+        
+        // On défini la zone de scroll
+        // +44 pour la marge de la navigation bar
+        // +31 marge souhaitée en bas
+        scrollView.contentSize.height = contentSize + 44 + 31
+    
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.clear
         
         // On configure la hauteur de notre scroll
-        scrollView.frame = self.view.frame
+        
+
         
         //On configure si notre slider retourne un angle ou non
         sldAngleStart.isAngle = true
