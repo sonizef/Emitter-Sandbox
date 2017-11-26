@@ -167,7 +167,7 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         // Création de notre action "Fermer"
         let actClose = UIAlertAction(title: "Fermer", style: .cancel) { (bool) in
-            print("On ne fait rien")
+
         }
         
         // Initialisation de notre picker
@@ -186,6 +186,12 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // Fonction qui ouvre notre libraire d'emitter
     @IBAction func actOpenLibrary(_ sender: Any) {
+        
+        // Si le menu de configuration est ouvert, alors on le ferme
+        if(EmitterViewController.menuIsOpen){
+            closeMenu()
+        }
+        
         // On affiche notre alert
         self.present(alertLibrary, animated: true, completion: nil)
         
