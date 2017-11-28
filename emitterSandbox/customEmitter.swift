@@ -56,7 +56,7 @@ class customEmitter : SKEmitterNode{
         self.particleRotationRange = customEmitter.config["ROTATION_RANGE"] as! CGFloat
         self.particleRotationSpeed = customEmitter.config["ROTATION_SPEED"] as! CGFloat
         self.particleColorBlendFactor = customEmitter.config["COLOR_BLEND_FACTOR"] as! CGFloat
-        self.particleBlendMode = customEmitter.config["COLOR_BLEND_MODE"] as! SKBlendMode
+        self.particleBlendMode = customEmitter.config["BLEND_MODE"] as! SKBlendMode
     }
     
     // On change notre dictionnaire en fonction d'un type déjà stocké dans le catalogue

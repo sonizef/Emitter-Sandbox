@@ -54,7 +54,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat( (359.818 * Double.pi) / 180),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.add
+            "BLEND_MODE" : SKBlendMode.add
         ],
         type.Fire : [
             "NAME" : "Fire",
@@ -83,7 +83,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat(0),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.add
+            "BLEND_MODE" : SKBlendMode.add
         ],
         type.Bokeh : [
             "NAME" : "Bokeh",
@@ -112,7 +112,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat( (360 * Double.pi) / 180),
             "ROTATION_SPEED" : CGFloat( (1.146 * Double.pi) / 180),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.screen
+            "BLEND_MODE" : SKBlendMode.screen
         ],
         type.FireFlies : [
             "NAME" : "Fire Flies",
@@ -141,7 +141,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat(0),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.alpha
+            "BLEND_MODE" : SKBlendMode.alpha
         ],
         type.Magic : [
             "NAME" : "Magic",
@@ -170,7 +170,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat(0),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.alpha
+            "BLEND_MODE" : SKBlendMode.alpha
         ],
         type.Rain : [
             "NAME" : "Rain",
@@ -199,7 +199,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat(0),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.alpha
+            "BLEND_MODE" : SKBlendMode.alpha
         ],
         type.Smoke : [
             "NAME" : "Smoke",
@@ -228,7 +228,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat( (359.818 * Double.pi) / 180),
             "ROTATION_SPEED" : CGFloat( (171.887 * Double.pi) / 180),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.alpha
+            "BLEND_MODE" : SKBlendMode.alpha
         ],
         type.Snow : [
             "NAME" : "Snow",
@@ -257,7 +257,7 @@ class catalogueEmitter {
             "ROTATION_RANGE" : CGFloat(0),
             "ROTATION_SPEED" : CGFloat(0),
             "COLOR_BLEND_FACTOR" : CGFloat(1),
-            "COLOR_BLEND_MODE" : SKBlendMode.alpha
+            "BLEND_MODE" : SKBlendMode.alpha
         ]
     ]
     
