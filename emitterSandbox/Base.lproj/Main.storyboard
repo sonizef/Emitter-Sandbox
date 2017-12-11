@@ -46,14 +46,23 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" image="icnConfigure" id="41G-Op-S1e">
-                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <connections>
-                                <action selector="actMenu:" destination="BV1-FR-VrT" id="W0l-YW-YyO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="icnConfigure" id="41G-Op-S1e">
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="actMenu:" destination="BV1-FR-VrT" id="W0l-YW-YyO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icnWeb" id="p5P-Dm-MMg">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="actWeb:" destination="BV1-FR-VrT" id="dVR-rc-hsp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="icnWebview" destination="p5P-Dm-MMg" id="s6e-EY-oCf"/>
                         <outlet property="menu" destination="MoB-uP-zWN" id="2SY-qx-z5e"/>
                     </connections>
                 </viewController>
@@ -529,5 +538,6 @@
         <image name="icnConfigure" width="24" height="24"/>
         <image name="icnLibrary" width="24" height="24"/>
         <image name="icnSave" width="24" height="24"/>
+        <image name="icnWeb" width="24" height="24"/>
     </resources>
 </document>

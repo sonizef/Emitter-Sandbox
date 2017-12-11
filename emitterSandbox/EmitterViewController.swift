@@ -10,21 +10,25 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
+class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIWebViewDelegate{
     
     // Déclaration de nos outlets
     @IBOutlet weak var menu: UIView!
+    @IBOutlet weak var icnWebview: UIBarButtonItem!
     
     // Déclaration de nos variables statics
     static var menuIsOpen : Bool = false
     
     // Déclaration de nos constantes
-    
+    let urlRequest = URLRequest(url: URL(string: "http://particule-simulator.soniweb.fr/gallery.php")!)
+
     // Déclaration de nos variables
     var menuController : MenuViewController!
     var scene : EmitterScene!
     var alertLibrary : UIAlertController!
     var pickerEmitterType : UIPickerView!
+    var webView : UIWebView!
+    var webViewIsOpen : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,9 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Création de notre alert ( bibliotheque )
         initAlert()
         
+        // On configure notre webview
+        webView = UIWebView(frame: self.view.frame)
+        webView.scrollView.bounces = false
         
         // Chargement 'GameScene.sks' en tant que GKScene. Cela permet de recuperer les élèments de notre scène
         if let scene = GKScene(fileNamed: "EmitterScene") {
@@ -242,6 +249,18 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
     }
     
+    // Lorsqu'on clique sur le bouton webview
+    @IBAction func actWeb(_ sender: Any) {
+        if(webViewIsOpen){
+            closeWebView()
+        }
+        else{
+            openWebView()
+        }
+        
+    }
+    
+    // Permet de sauvegarder l'emitter sur le serveur
     func uploadCustomEmitter(_ nom : String){
         
         let alertSuccess = UIAlertController(title: "Succès", message: "Retrouvez votre générateur sur le site : \n http://particule-simulator.soniweb.net", preferredStyle: .actionSheet)
@@ -261,5 +280,19 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         })
     }
     
+    // Fonction qui ouvre la webview
+    func openWebView(){
+        icnWebview.image = UIImage(named: "icnClose")
+        self.view.addSubview(webView)
+        webView.loadRequest(urlRequest)
+        webViewIsOpen = true
+    }
     
+    // Fonction qui ferme la webview
+    func closeWebView(){
+        icnWebview.image = UIImage(named: "icnWeb")
+        webView.removeFromSuperview()
+        webViewIsOpen = false
+    }
+   
 }
