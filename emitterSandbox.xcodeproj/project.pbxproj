@@ -15,8 +15,8 @@
 		8B691F1E1FB9E534001409E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F1C1FB9E534001409E5 /* Main.storyboard */; };
 		8B691F201FB9E534001409E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F1F1FB9E534001409E5 /* Assets.xcassets */; };
 		8B691F231FB9E534001409E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */; };
-		8B9800481FCD9BA00043AD03 /* MySQLConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9800471FCD9BA00043AD03 /* MySQLConnector.swift */; };
 		8BAB860B1FBB37A100E4EFA0 /* customEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */; };
+		8BBDB1731FD302F20021D3BA /* MySQLConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDB1721FD302F20021D3BA /* MySQLConnector.swift */; };
 		8BE4060F1FBF195400B3D3CC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4060E1FBF195400B3D3CC /* MenuViewController.swift */; };
 		8BFD3F641FBEDC3700DD2012 /* catalogueEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */; };
 /* End PBXBuildFile section */
@@ -32,8 +32,8 @@
 		8B691F1F1FB9E534001409E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B691F221FB9E534001409E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B691F241FB9E534001409E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B9800471FCD9BA00043AD03 /* MySQLConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySQLConnector.swift; path = ../../../Ressources/MySQLConnector.swift; sourceTree = "<group>"; };
 		8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEmitter.swift; sourceTree = "<group>"; };
+		8BBDB1721FD302F20021D3BA /* MySQLConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLConnector.swift; sourceTree = "<group>"; };
 		8BE4060E1FBF195400B3D3CC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catalogueEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +76,7 @@
 				8B35C91C1FC98B4900C399ED /* customSlider.swift */,
 				8BFD3F631FBEDC3700DD2012 /* catalogueEmitter.swift */,
 				8BAB860A1FBB37A100E4EFA0 /* customEmitter.swift */,
-				8B9800471FCD9BA00043AD03 /* MySQLConnector.swift */,
+				8BBDB1721FD302F20021D3BA /* MySQLConnector.swift */,
 				8B691F1F1FB9E534001409E5 /* Assets.xcassets */,
 				8B691F1C1FB9E534001409E5 /* Main.storyboard */,
 				8B691F211FB9E534001409E5 /* LaunchScreen.storyboard */,
@@ -158,7 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B9800481FCD9BA00043AD03 /* MySQLConnector.swift in Sources */,
+				8BBDB1731FD302F20021D3BA /* MySQLConnector.swift in Sources */,
 				8B691F191FB9E534001409E5 /* EmitterScene.swift in Sources */,
 				8BE4060F1FBF195400B3D3CC /* MenuViewController.swift in Sources */,
 				8B691F1B1FB9E534001409E5 /* EmitterViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
     // Déclaration de nos outlets
     @IBOutlet weak var menu: UIView!
@@ -58,8 +58,8 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     
                     view.ignoresSiblingOrder = true
                     
-                    view.showsFPS = true
-                    view.showsNodeCount = true
+                    view.showsFPS = false
+                    view.showsNodeCount = false
                 }
             }
         }
@@ -102,6 +102,11 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // Affichage des lignes de notre picker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return (Array(catalogueEmitter.catalogue)[row].value["NAME"] as! String)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     // Liaison qui permet de passer notre currentEmitter vers notre menu
@@ -196,5 +201,65 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.present(alertLibrary, animated: true, completion: nil)
         
     }
+    
+    // Lorsqu'on clic sur le bouton "Save"
+    @IBAction func actSave(_ sender: Any) {
+        
+        // On créer et configue nos alerts
+        let alertSave = UIAlertController(title: "Sauvegarder", message: "Sauvegarder votre générateur de particule sur notre site ?", preferredStyle:.alert )
+        let alertUpload = UIAlertController(title: "Uploader", message: "Donner un nom à votre générateur \n", preferredStyle: .alert)
+        let alertError = UIAlertController(title: "Erreur", message: "Vous devez mettre un nom", preferredStyle: .alert)
+        
+        let txtNomCustomEmitter = UITextField(frame: CGRect(x: 10, y: 60, width: alertUpload.view.frame.width-80, height: 30))
+        txtNomCustomEmitter.placeholder = "Exemple : Flamme"
+        
+        txtNomCustomEmitter.delegate = self
+        
+        // On ajoute les actions liés aux alerts
+        alertSave.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (Bool) in
+            // On affiche l'alert qui demande le nom et upload notre configuration
+            self.present(alertUpload, animated: true, completion: nil)
+        }))
+        alertSave.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+
+        alertUpload.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (Bool) in
+            // On envoi notre configuration sur le serveur
+            if(txtNomCustomEmitter.text == nil || txtNomCustomEmitter.text == ""){
+                self.present(alertError, animated: true, completion: nil)
+            }
+            else{
+                self.uploadCustomEmitter(txtNomCustomEmitter.text!)
+            }
+        }))
+        alertUpload.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alertUpload.view.addSubview(txtNomCustomEmitter)
+        
+        alertError.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (Bool) in
+            self.present(alertUpload, animated: true, completion: nil)
+        }))
+        
+        self.present(alertSave, animated: true, completion: nil)
+        
+    }
+    
+    func uploadCustomEmitter(_ nom : String){
+        
+        let alertSuccess = UIAlertController(title: "Succès", message: "Retrouvez votre générateur sur le site : \n http://particule-simulator.soniweb.net", preferredStyle: .actionSheet)
+        alertSuccess.addAction(UIAlertAction(title: "D'accord !", style: .default, handler: nil))
+        
+        // On créer notre objet MySQLConnector
+        let mysqlconnect = MySQLConnector()
+        
+        // On prépare notre requete
+        let req = "nom="+nom+"&addCustomEmitter={"+customEmitter.getJSONArray()+"}"
+
+        // On POST notre requete
+        mysqlconnect.postJson(req, completionHandler: { (datas) in
+
+            // On affiche l'alert succès
+            self.present(alertSuccess, animated: true, completion: nil)
+        })
+    }
+    
     
 }

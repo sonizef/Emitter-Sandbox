@@ -64,4 +64,38 @@ class customEmitter : SKEmitterNode{
         customEmitter.config = catalogueEmitter.getEmitterFromCatalogue(typeEmitter)
     }
     
+    // Fonction qui créer une chaine de caracteres avec tous les parametres au format JSON
+    static func getJSONArray() -> String{
+        
+        var result = ""
+        
+        // Manque texture et Couleur
+        
+        result += "\"EMITTER_BIRTHRATE\" : \""+String(describing: customEmitter.config["EMITTER_BIRTHRATE"] as! CGFloat)+"\", "
+        result += "\"EMITTER_MAXIMUM\" : \""+String(describing: customEmitter.config["EMITTER_MAXIMUM"] as! Int)+"\", "
+        result += "\"LIFETIME_START\" : \""+String(describing: customEmitter.config["LIFETIME_START"] as! CGFloat)+"\", "
+        result += "\"LIFETIME_RANGE\" : \""+String(describing: customEmitter.config["LIFETIME_RANGE"] as! CGFloat)+"\", "
+        result += "\"POSITION_RANGE_X\" : \""+String(describing: customEmitter.config["POSITION_RANGE_X"] as! CGFloat)+"\", "
+        result += "\"POSITION_RANGE_Y\" : \""+String(describing: customEmitter.config["POSITION_RANGE_Y"] as! CGFloat)+"\", "
+        result += "\"POSITION_RANGE_Z\" : \""+String(describing: customEmitter.config["POSITION_RANGE_Z"] as! CGFloat)+"\", "
+        result += "\"ANGLE_START\" : \""+String(describing: customEmitter.config["ANGLE_START"] as! CGFloat)+"\", "
+        result += "\"ANGLE_RANGE\" : \""+String(describing: customEmitter.config["ANGLE_RANGE"] as! CGFloat)+"\", "
+        result += "\"SPEED_START\" : \""+String(describing: customEmitter.config["SPEED_START"] as! CGFloat)+"\", "
+        result += "\"SPEED_RANGE\" : \""+String(describing: customEmitter.config["SPEED_RANGE"] as! CGFloat)+"\", "
+        result += "\"ACCELERATION_X\" : \""+String(describing: customEmitter.config["ACCELERATION_X"] as! CGFloat)+"\", "
+        result += "\"ACCELERATION_Y\" : \""+String(describing: customEmitter.config["ACCELERATION_Y"] as! CGFloat)+"\", "
+        result += "\"ALPHA_START\" : \""+String(describing: customEmitter.config["ALPHA_START"] as! CGFloat)+"\", "
+        result += "\"ALPHA_RANGE\" : \""+String(describing: customEmitter.config["ALPHA_RANGE"] as! CGFloat)+"\", "
+        result += "\"ALPHA_SPEED\" : \""+String(describing: customEmitter.config["ALPHA_SPEED"] as! CGFloat)+"\", "
+        result += "\"SCALE_START\" : \""+String(describing: customEmitter.config["SCALE_START"] as! CGFloat)+"\", "
+        result += "\"SCALE_RANGE\" : \""+String(describing: customEmitter.config["SCALE_RANGE"] as! CGFloat)+"\", "
+        result += "\"SCALE_SPEED\" : \""+String(describing: customEmitter.config["SCALE_SPEED"] as! CGFloat)+"\", "
+        result += "\"ROTATION_START\" : \""+String(describing: customEmitter.config["ROTATION_START"] as! CGFloat)+"\", "
+        result += "\"ROTATION_RANGE\" : \""+String(describing: customEmitter.config["ROTATION_RANGE"] as! CGFloat)+"\", "
+        result += "\"ROTATION_SPEED\" : \""+String(describing: customEmitter.config["ROTATION_SPEED"] as! CGFloat)+"\""
+        
+        return result
+    }
+    
+    
 }

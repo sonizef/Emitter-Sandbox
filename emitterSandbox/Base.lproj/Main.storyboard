@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mQT-Mu-A0n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mQT-Mu-A0n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Particule Simulator-->
+        <!--Emitter View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="EmitterViewController" customModule="emitterSandbox" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,14 +31,22 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Particule Simulator" id="dpD-G4-6Ja">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="3Xd-15-sSe">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="actOpenLibrary:" destination="BV1-FR-VrT" id="9pL-QM-fAh"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="41G-Op-S1e">
+                    <navigationItem key="navigationItem" id="dpD-G4-6Ja">
+                        <leftBarButtonItems>
+                            <barButtonItem image="icnSave" id="nog-bZ-LN3">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="actSave:" destination="BV1-FR-VrT" id="hTd-y8-iMd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="icnLibrary" id="3Xd-15-sSe">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="actOpenLibrary:" destination="BV1-FR-VrT" id="9pL-QM-fAh"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="icnConfigure" id="41G-Op-S1e">
                             <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <action selector="actMenu:" destination="BV1-FR-VrT" id="W0l-YW-YyO"/>
@@ -516,4 +525,9 @@
             <point key="canvasLocation" x="476" y="1438.8305847076463"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icnConfigure" width="24" height="24"/>
+        <image name="icnLibrary" width="24" height="24"/>
+        <image name="icnSave" width="24" height="24"/>
+    </resources>
 </document>

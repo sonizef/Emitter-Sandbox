@@ -41,6 +41,10 @@ class customSlider: UISlider {
         // On pense à le masquer au début
         viewLabel.alpha = 0;
         
+        self.minimumTrackTintColor = UIColor.white
+        self.maximumTrackTintColor = UIColor.black
+        self.setThumbImage(UIImage(named: "sliderThumb"), for: .normal)
+        
         // On ajoute notre label à notre UISlider
         viewLabel.addSubview(lblValue)
         self.addSubview(viewLabel)

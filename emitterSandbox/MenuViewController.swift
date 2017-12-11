@@ -44,8 +44,6 @@ class MenuViewController: UIViewController {
         for v in self.view.subviews{
             if(contentSize < v.frame.origin.y + v.frame.height){
                 contentSize = v.frame.origin.y + v.frame.height
-                print(v.frame.maxY)
-                print(contentSize)
             }
         }
         
