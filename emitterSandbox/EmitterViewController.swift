@@ -128,6 +128,12 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // On ouvre ou ferme le menu en fonction si celui-ci l'est deja ou non
     @IBAction func actMenu(_ sender: Any) {
+        
+        // Si la webview est ouverte, on la ferme
+        if(webViewIsOpen){
+            closeWebView()
+        }
+        
         if(EmitterViewController.menuIsOpen){
             closeMenu()
         }
@@ -199,6 +205,11 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // Fonction qui ouvre notre libraire d'emitter
     @IBAction func actOpenLibrary(_ sender: Any) {
         
+        // Si la webview est ouverte, on la ferme
+        if(webViewIsOpen){
+            closeWebView()
+        }
+        
         // Si le menu de configuration est ouvert, alors on le ferme
         if(EmitterViewController.menuIsOpen){
             closeMenu()
@@ -211,6 +222,11 @@ class EmitterViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // Lorsqu'on clic sur le bouton "Save"
     @IBAction func actSave(_ sender: Any) {
+        
+        // Si la webview est ouverte, on la ferme
+        if(webViewIsOpen){
+            closeWebView()
+        }
         
         // On créer et configue nos alerts
         let alertSave = UIAlertController(title: "Sauvegarder", message: "Sauvegarder votre générateur de particule sur notre site ?", preferredStyle:.alert )
